@@ -16,6 +16,7 @@ $ docker compose up &
 ```
 
 ## Recreating protobuf definition files
+If necessary, you can recreate the authz's protobuf definition file using below commands.
 ```
 $ rm -f proto/authz/authz.pb.go
 $ rm -f proto/authz/authz_grpc.pb.go
