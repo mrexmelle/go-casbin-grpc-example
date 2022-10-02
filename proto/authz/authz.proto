@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package = "github.com/mrexmelle/go-casbin-grpc-example/proto/authz";
+
+package authz;
+
+service Authz {
+	rpc Verify(VerificationRequest) returns (VerificationResponse) {}
+	rpc GetRolesForUser(RolesForUserRequest) returns (RolesForUserResponse) {}
+}
+
+message VerificationRequest {
+	string id = 1;
+	string resource = 2;
+	string method = 3;
+}
+
+message VerificationResponse {
+	bool authorized = 1;
+}
+
+message RolesForUserRequest {
+	string id = 1;
+}
+
+message RolesForUserResponse {
+	repeated string roles = 1;
+}
